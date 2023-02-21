@@ -1,3 +1,5 @@
+// Insertion
+// DFS -> inorder, preorder, postorder (recursive)
 #include <stdio.h>
 #include<stdlib.h>
 
@@ -76,10 +78,6 @@ int main()
     printf("\n");
     level_order(root);
     printf("\n");
-    // inorder_iterative(root);
-    // preorder_iterative(root);
-    // postorder_iterative_using_1_stack(root);
-    // postorder_iterative_using_2_stack(root);
 
     return 0;
 }
