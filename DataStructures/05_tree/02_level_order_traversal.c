@@ -10,11 +10,21 @@ typedef struct node
 }node;
 void push(node* q[],int* rear,node* newnode)
 {
+    if((*rear)==max-1)
+    {
+        printf("Error: Queue Overflow\n");
+        return;
+    }
     q[(*rear)] = newnode;
     ++(*rear);
 }
-void pop(node* q[],int* front)
+void pop(node* q[],int* front,int* rear)
 {
+    if(*front == *rear)
+    {
+        printf("Error: Queue underflow\n");
+        return;
+    }
     ++(*front);
 }
 void insert(node** root,int x)
@@ -51,13 +61,14 @@ void bfs(node* root)
     while(front<rear)
     {
         int size = rear;
-        for(int i=front;i<size;i++)
+        // for(int i=front;i<size;i++)
+        while(front<size)
         {
             node* obj = q[front];
             if(obj->left!=NULL) push(q,&rear,obj->left);
             if(obj->right!=NULL) push(q,&rear,obj->right);
             printf("%d ",obj->info);
-            pop(q,&front);
+            pop(q,&front,&rear);
         }
         printf("\n");
     }

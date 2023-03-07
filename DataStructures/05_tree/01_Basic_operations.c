@@ -76,8 +76,8 @@ int main()
     printf("\n");
     postorder_recursive(root);
     printf("\n");
-    level_order(root);
-    printf("\n");
+    // level_order(root);
+    // printf("\n");
 
     return 0;
 }
